@@ -1,0 +1,6 @@
+---
+- name: Install baseline packages
+  package:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ packages[ansible_pkg_mgr] | default(packages['default']) }}"

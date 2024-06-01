@@ -1,0 +1,21 @@
+---
+- name: Install kubectl on Fedora
+  when: ansible_pkg_mgr == "dnf"
+  block:
+    - name: Add Kubernetes repository
+      ansible.builtin.dnf_repository:
+        name: kubernetes
+        description: Kubernetes
+        baseurl: https://pkgs.k8s.io/core:/stable:/v1.30/rpm/
+        gpgcheck: true
+        gpgkey: https://pkgs.k8s.io/core:/stable:/v1.30/rpm/repodata/repomd.xml.key
+        state: present
+    - ansible.builtin.dnf:
+        name: kubectl
+        state: latest
+
+- name: Install kubectl on macOS
+  when: ansible_pkg_mgr == "brew"
+  community.general.homebrew:
+    name: kubectl
+    state: latest

@@ -1,0 +1,24 @@
+---
+- name: Install VSCodium on Fedora
+  when: ansible_pkg_mgr == "dnf"
+  block:
+    - name: Import VSCodium GPG key
+      ansible.builtin.rpm_key:
+        key: https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
+        state: present
+    - name: Add VSCodium repository
+      ansible.builtin.dnf_repository:
+        name: vscodium
+        description: VSCodium
+        baseurl: https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpm/
+        gpgcheck: true
+        state: present
+    - ansible.builtin.dnf:
+        name: codium
+        state: latest
+
+- name: Install VSCodium on macOS
+  when: ansible_pkg_mgr == "brew"
+  community.general.homebrew:
+    name: vscodium
+    state: latest
