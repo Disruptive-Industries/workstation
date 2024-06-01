@@ -8,9 +8,9 @@
     - ansible.builtin.dnf:
         name: starship
         state: latest
-        args:
-          creates: "{{ ansible_env.HOME }}/bin/starship"
-  register: starship_install
+      args:
+        creates: "{{ ansible_env.HOME }}/bin/starship"
+      register: starship_install
 
 - name: Install Starship on macOS
   when: ansible_pkg_mgr == "brew"
