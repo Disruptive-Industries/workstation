@@ -4,7 +4,7 @@
   block:
     - community.general.copr:
         name: atim/starship
-        state: present
+        state: enabled
     - ansible.builtin.dnf:
         name: starship
         state: latest
