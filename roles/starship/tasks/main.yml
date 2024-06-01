@@ -9,18 +9,15 @@
     - ansible.builtin.dnf:
         name: starship
         state: latest
-      register: starship_install
 
 - name: Install Starship on macOS
   when: ansible_pkg_mgr == "brew"
   community.general.homebrew:
     name: starship
     state: latest
-  register: starship_install
 
 - name: Add Starship to Zsh
   ansible.builtin.lineinfile:
     path: "{{ ansible_env.HOME }}/.zshrc"
     line: 'eval "$(starship init zsh)"'
     create: true
-  when: starship_install.changed
