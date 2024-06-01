@@ -14,7 +14,8 @@
         baseurl: https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpm/
         gpgcheck: true
         state: present
-    - ansible.builtin.dnf:
+    - name: Install VSCodium
+      ansible.builtin.dnf:
         name: codium
         state: latest
 
