@@ -1,6 +1,5 @@
 ---
 - name: Developer workstation setup
-  hosts: localhost
   gather_facts: true
   roles:
     - baseline
