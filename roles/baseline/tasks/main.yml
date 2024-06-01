@@ -1,5 +1,6 @@
 ---
 - name: Install baseline packages
+  become: "{{ ansible_pkg_mgr != 'brew' }}"
   loop: "{{ packages[ansible_pkg_mgr] | union(packages['default']) }}"
   ansible.builtin.package:
     name: "{{ item }}"
