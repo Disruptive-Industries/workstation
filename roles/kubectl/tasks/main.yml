@@ -3,7 +3,7 @@
   when: ansible_pkg_mgr == "dnf"
   block:
     - name: Add Kubernetes repository
-      ansible.builtin.dnf_repository:
+      ansible.builtin.yum_repository:
         name: kubernetes
         description: Kubernetes
         baseurl: https://pkgs.k8s.io/core:/stable:/v1.30/rpm/
