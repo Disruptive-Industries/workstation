@@ -9,6 +9,6 @@ packages:
     - podman
     - podman-docker
     - podman-compose
-  apt:
-  brew:
-  dnf:
+  apt: []
+  brew: []
+  dnf: []

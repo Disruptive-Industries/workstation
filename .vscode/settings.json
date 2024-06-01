@@ -1,5 +1,6 @@
 {
   "yaml.schemas": {
     "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook": "file:///home/antony/Development/di/workstation/local.yml"
-  }
+  },
+  "ansible.python.interpreterPath": "/bin/python"
 }
