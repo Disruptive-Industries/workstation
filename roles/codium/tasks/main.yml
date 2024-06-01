@@ -11,7 +11,8 @@
       ansible.builtin.yum_repository:
         name: vscodium
         description: VSCodium
-        baseurl: https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpm/
+        baseurl: https://download.vscodium.com/rpms/
+        gpgkey: https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
         gpgcheck: true
         state: present
     - name: Install VSCodium
