@@ -1,5 +1,6 @@
 ---
 - name: Install Starship on Linux
+  become: true
   when: ansible_pkg_mgr != "brew"
   block:
     - community.general.copr:
