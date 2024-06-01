@@ -1,5 +1,6 @@
 ---
 - name: Install VSCodium on Fedora
+  become: true
   when: ansible_pkg_mgr == "dnf"
   block:
     - name: Import VSCodium GPG key

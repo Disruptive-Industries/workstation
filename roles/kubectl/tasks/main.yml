@@ -1,5 +1,6 @@
 ---
 - name: Install kubectl on Fedora
+  become: true
   when: ansible_pkg_mgr == "dnf"
   block:
     - name: Add Kubernetes repository
