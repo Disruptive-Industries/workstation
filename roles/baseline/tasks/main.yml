@@ -3,7 +3,7 @@
   package:
     name: "{{ item }}"
     state: latest
-  loop: "{{ packages[ansible_pkg_mgr] | default(packages['default']) }}"
+  loop: "{{ packages[ansible_pkg_mgr] | zip(packages['default']) | list }}"
 
 - name: Ensure default shell is /bin/zsh for "{{ ansible_user_id }}"
   ansible.builtin.user:
