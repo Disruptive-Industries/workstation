@@ -1,6 +1,6 @@
 ---
 - name: Install baseline packages
-  package:
+  ansible.builtin.package:
     name: "{{ item }}"
     state: latest
   loop: "{{ packages[ansible_pkg_mgr] | zip(packages['default']) | list }}"
