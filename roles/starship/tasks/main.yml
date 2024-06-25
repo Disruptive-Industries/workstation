@@ -1,7 +1,7 @@
 ---
 - name: Install Starship on Linux
   become: true
-  when: ansible_pkg_mgr != "brew"
+  when: ansible_pkg_mgr != "homebrew"
   block:
     - community.general.copr:
         name: atim/starship
@@ -11,7 +11,7 @@
         state: latest
 
 - name: Install Starship on macOS
-  when: ansible_pkg_mgr == "brew"
+  when: ansible_pkg_mgr == "homebrew"
   community.general.homebrew:
     name: starship
     state: latest

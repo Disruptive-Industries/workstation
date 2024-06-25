@@ -9,5 +9,5 @@ packages:
     - podman-docker
     - podman-compose
   apt: []
-  brew: []
+  homebrew: []
   dnf: []

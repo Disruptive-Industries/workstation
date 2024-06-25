@@ -21,7 +21,7 @@
         state: latest
 
 - name: Install VSCodium on macOS
-  when: ansible_pkg_mgr == "brew"
+  when: ansible_pkg_mgr == "homebrew"
   community.general.homebrew:
     name: vscodium
     state: latest

@@ -1,6 +1,6 @@
 ---
 - name: Install JetBrains Mono Nerd Font on Linux
-  when: ansible_pkg_mgr != "brew"
+  when: ansible_pkg_mgr != "homebrew"
   block:
     - name: Check if ~/.fonts exists
       file:
@@ -20,7 +20,7 @@
         remote_src: true
 
 - name: Install JetBrains Mono Nerd Font on macOS
-  when: ansible_pkg_mgr == "brew"
+  when: ansible_pkg_mgr == "homebrew"
   community.general.homebrew:
     name: font-jetbrains-mono-nerd-font
     state: latest

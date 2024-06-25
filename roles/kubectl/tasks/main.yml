@@ -16,7 +16,7 @@
         state: latest
 
 - name: Install kubectl on macOS
-  when: ansible_pkg_mgr == "brew"
+  when: ansible_pkg_mgr == "homebrew"
   community.general.homebrew:
     name: kubectl
     state: latest
