@@ -6,7 +6,6 @@ packages:
     - zsh
     - fzf
     - podman
-    - podman-docker
     - podman-compose
   apt: []
   homebrew: []
