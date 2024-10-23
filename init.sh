@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Install Homebrew and Ansible
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -17,4 +17,4 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Run Ansible playbook
-ansible-pull -U https://github.com/Disruptive-Industries/workstation
+ansible-pull -K -U https://github.com/Disruptive-Industries/workstation

@@ -7,5 +7,5 @@
     - baseline
     - fonts
     - starship
-    - codium
+    # - codium
     - kubectl
